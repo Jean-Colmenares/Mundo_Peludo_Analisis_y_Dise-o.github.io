@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Peludo - Agendar Cita</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/agendar_cita.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-paw"></i>
+            <span>Mundo Peludo</span>
+        </div>
+        <a href="inicio_recepcionsita.html" class="agenda-btn">Agenda</a>
+    </aside>
+
+    <main class="main-content">
+        <h1>Agendar cita</h1>
+        <div class="agenda-form-grid">
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    Oct 2025
+                    <div class="nav-arrows"><i class="fa-solid fa-chevron-left"></i><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="day-name">Mo</div><div class="day-name">Tu</div><div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div><div class="day-name">Su</div>
+                    <div class="date">1</div><div class="date">2</div><div class="date">3</div><div class="date">4</div><div class="date">5</div><div class="date">6</div><div class="date">7</div>
+                    <div class="date">8</div><div class="date">9</div><div class="date">10</div><div class="date">11</div><div class="date">12</div><div class="date">13</div><div class="date">14</div>
+                    <div class="date">15</div><div class="date">16</div><div class="date">17</div><div class="date selected" id="selected-date">18</div><div class="date">19</div><div class="date">20</div><div class="date">21</div>
+                    <div class="date">22</div><div class="date">23</div><div class="date">24</div><div class="date">25</div><div class="date">26</div><div class="date">27</div><div class="date">28</div>
+                    <div class="date">29</div><div class="date">30</div><div class="date">31</div><div class="date inactive">1</div><div class="date inactive">2</div><div class="date inactive">3</div><div class="date inactive">4</div>
+                </div>
+            </div>
+            <div class="form-section">
+                <input type="text" placeholder="Nombre del dueño" class="form-input">
+                <input type="text" placeholder="Numero de contacto" class="form-input">
+                <h3>Tipo de consulta</h3>
+                <select class="custom-select"><option>Selecciona una opcion</option></select>
+                <h3>Nombre del doctor</h3>
+                <select class="custom-select"><option>Selecciona una opcion</option></select>
+
+                <h3>Hora de la consulta</h3>
+                <div class="time-picker-container">
+                    <div class="time-input-group">
+                        <input type="number" min="01" max="12" value="08" class="time-input">
+                        <span class="time-separator">:</span>
+                        <input type="number" min="00" max="59" value="00" class="time-input">
+                    </div>
+                    
+                    <select class="ampm-select">
+                        <option value="AM" selected>AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+                
+                <div class="time-picker-visual">
+                    <div class="time-main">Horas disponibles</div>
+                    <div>07:00 AM</div>
+                    <div>07:55 AM</div>
+                    <div>08:00 AM</div>
+                    <div>08:05 AM</div>
+                    <div>09:00 AM</div>
+                    <div>09:05 AM</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-cancelar" id="main-cancel-btn">Cancelar</button>
+            <button class="btn-guardar" id="main-save-btn">Guardar</button>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modal-success">
+        <div class="modal-content">
+            <div class="icon-success"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="modal-message">
+                <h2>Cita agendada correctamente</h2>
+                <p>La cita quedo agendada para el dia 21/11/2025</p>
+            </div>
+            <button class="modal-btn accept" id="btn-success-accept">Aceptar</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-cancel-confirm">
+        <div class="modal-content">
+            <div class="icon-warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="modal-message">
+                <h2>¿Esta seguro de eliminar esta cita?</h2>
+                <p>Esta accion no se puede deshacer</p>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" id="btn-confirm-cancel">Cancelar</button>
+                <button class="modal-btn accept" id="btn-confirm-accept">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-cancel-success">
+        <div class="modal-content">
+            <div class="icon-cancel-success">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </div>
+            <div class="modal-message">
+                <h2>Cita cancelada correctamente</h2>
+            </div>
+            <button class="modal-btn accept" id="btn-cancel-success-accept">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="js/agendar_cita.js"></script>
+
+</body>
+</html>
