@@ -313,7 +313,7 @@
         .appointment-icons {
         display: flex;
         align-items: center;
-        gap: 15px; /* Agrega un pequeño espacio entre ellos */
+        gap: 10px; /* Agrega un pequeño espacio entre ellos */
         margin-right: -5px; /* Ajusta ligeramente el contenedor hacia la derecha */
         }
 
