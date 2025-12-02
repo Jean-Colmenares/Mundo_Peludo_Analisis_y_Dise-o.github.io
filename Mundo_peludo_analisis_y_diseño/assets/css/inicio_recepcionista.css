@@ -23,6 +23,9 @@
             --table-active-bg: #1abc9c; 
             --table-active-text: #ffffff;
             --table-pending-bg: #6c99b9; 
+
+            --red-cancel: #f44336;
+            --modal-bg: #eef2f6;
         }
 
         /*  SIDEBAR */
@@ -304,13 +307,23 @@
             font-size: 0.9rem;
             opacity: 0.9;
         }
+
+        /* Contenedor y estilos de los iconos (Lápiz y Papelera) */
+        .appointment-icons {
+            display: flex;
+            align-items: center;
+        }
         
         .appointment .edit-icon {
             color: white;
             font-size: 1.1rem;
             margin-left: 10px;
         }
-        
+
+        .appointment-icons .fa-trash-can:hover {
+        color: var(--red-cancel);
+        }
+
         /* Citas de Ana Zamora */
         .doctor-ana {
             background-color: var(--table-active-bg);
@@ -321,3 +334,87 @@
             background-color: var(--table-pending-bg);
         }
         
+        /* --- ESTILOS DE LOS MODALES (AGREGADOS PARA LA INTERACCIÓN) --- */
+
+        .modal-overlay {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: none; /* Por defecto invisible */
+            justify-content: center; 
+            align-items: center; 
+            z-index: 1000;
+        }
+        .modal-overlay.visible { 
+            display: flex; /* Clase para mostrar el modal */
+        }
+
+        .modal-content {
+            background-color: var(--modal-bg);
+            padding: 40px; 
+            border-radius: 8px; 
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            width: 480px;
+        }
+
+        .modal-message h2 { 
+            font-size: 1.8rem; 
+            font-weight: 700; 
+            margin-bottom: 10px; 
+            color: #000; 
+        }
+        .modal-message p { 
+            font-size: 1rem; 
+            color: #333; 
+            margin-bottom: 25px; 
+        }
+
+        /* Botones dentro del modal */
+        .modal-btn { 
+            border: none; 
+            padding: 10px 30px; 
+            border-radius: 5px; 
+            font-size: 1rem; 
+            font-weight: 600; 
+            cursor: pointer; 
+            color: white; 
+            margin-top: 10px; 
+        }
+
+        /* Botones de acción del modal (Aceptar/Cancelar) */
+        .modal-btn.accept { 
+            background-color: var(--bright-teal); /* Azul brillante para aceptar/continuar */
+        }
+        .modal-btn.cancel { 
+            background-color: var(--red-cancel); /* Rojo para cancelar */
+        }
+
+        .modal-actions { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-top: 20px; 
+        }
+
+        /* Iconos de estado en modales */
+        .icon-success i { /* Usado para "Agendada correctamente" */
+            font-size: 50px; 
+            color: var(--primary-teal); 
+            margin-bottom: 20px; 
+        }
+        .icon-warning i { /* Usado para "¿Está seguro de eliminar?" */
+            font-size: 50px; 
+            color: var(--red-cancel); /* Rojo para advertencia */
+            margin-bottom: 20px; 
+        }
+
+        /* Círculo rojo con X para la cancelación exitosa */
+        .icon-cancel-success i { 
+            font-size: 50px; 
+            color: var(--red-cancel); 
+            margin-bottom: 20px; 
+        }
