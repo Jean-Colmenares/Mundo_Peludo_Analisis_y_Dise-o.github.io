@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnAdvertenciaCancelar = document.getElementById('btn-advertencia-cancelar');
     const btnAdvertenciaAceptar = document.getElementById('btn-advertencia-aceptar');
     
-    const PAGINA_AGENDA = 'inicio_recepcionista.html';
+    const PAGINA_AGENDA = 'agendar_cita.html';
 
 
     // Función para mostrar/ocultar modales
