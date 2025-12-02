@@ -309,15 +309,26 @@
         }
 
         /* Contenedor y estilos de los iconos (Lápiz y Papelera) */
-        .appointment-icons {
-            display: flex;
-            align-items: center;
-        }
         
-        .appointment .edit-icon {
+        .appointment-icons {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Agrega un pequeño espacio entre ellos */
+        margin-right: -5px; /* Ajusta ligeramente el contenedor hacia la derecha */
+        }
+
+        /* El lápiz debe ser un enlace que lleva a la página de Reprogramar */
+        .appointment a.edit-icon, 
+        .appointment .cancel-appointment-btn {
             color: white;
             font-size: 1.1rem;
-            margin-left: 10px;
+            cursor: pointer;
+            text-decoration: none; /* Asegura que no tenga subrayado si es un <a> */
+            transition: color 0.2s;
+        }
+
+        .appointment a.edit-icon:hover {
+            color: var(--blue-gray);
         }
 
         .appointment-icons .fa-trash-can:hover {
